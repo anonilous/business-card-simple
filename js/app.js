@@ -1,10 +1,4 @@
-﻿/*
- * Refactor App.js to module
- *
- *
- */
-
-"use strict";
+﻿"use strict";
 
 var app = {
     type: {
