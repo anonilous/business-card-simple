@@ -10,7 +10,7 @@ var app = {
     },
 
     init: function() {
-        // app.initDB();
+
         app.initPage();
         // Listen hash change for user only
         /* Add following codes in Order onCreateOrderSucceeded()
@@ -24,10 +24,7 @@ var app = {
         }
     },
 
-    // initDB() {
-    //     // Put the object into storage
-    //     localStorage.setItem('jsonData2', JSON.stringify(jsonData2));
-    // },
+
     initPage: function() {
         var hash = window.location.hash;
         //console.log(hash);
