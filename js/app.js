@@ -1,13 +1,7 @@
 ﻿"use strict";
 
 var app = {
-    type: {
-        User: "User",
-        Vendor: "Vendor",
-        Finance: "Finance",
-        Admin: "Admin",
-        Developer: "Developer"
-    },
+
 
     init: function() {
 
