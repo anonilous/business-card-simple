@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Business Card</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <!-- Vendor CSS -->
+    <link href="./css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/vendor/inspinia/style.css" rel="stylesheet" />
+    <link href="./css/vendor/bootstrap/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="./css/vendor/bootstrap/bootstrap-editable.min.css" rel="stylesheet" />
+    <link href="./css/vendor/pace/pace.min.css" rel="stylesheet" />
+    <link href="./css/vendor/AdminLTE/AdminLTE.min.css" rel="stylesheet" />
+    <link href="./css/vendor/AdminLTE/skins/skin-blue-light.min.css" rel="stylesheet" />
+    <link href="./css/vendor/sweetalert/sweetalert.min.css" rel="stylesheet" />
+    <link href="./css/vendor/animate/animate.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/ionicons.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <!--<link href="./css/app.css" rel="stylesheet" />-->
+</head>
+
+<body class="hold-transition sidebar-mini skin-blue-light sidebar-collapse">
+    <div class="wrapper margin-right">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini">
+                    <i class="fa fa-home"></i>
+                </span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">
+                    <b>
+                        <i class="fa fa-home"></i>Home</b>
+                </span>
+            </a>
+
+            <!-- Header navbar -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button -->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">Business Card</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- ./main-header -->
+
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <!-- sidebar menu -->
+                <ul class="sidebar-menu">
+                    <li id="stationery" class="active treeview">
+                        <a href="javascript:void(0)" id="showTextarea">
+                            <i class="fa fa-pencil"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <!-- #/stationery -->
+
+                    <li id="admin" class="treeview">
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-user-secret"></i>
+                            <span>Admin</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="javascript:void(0)" onclick="order.changeAdminOrderView()">
+                                    <i class="fa fa-circle-o"></i> Order
+                                    <span class="pull-right-container">
+                                        <!--<i class="fa fa-angle-left pull-right"></i>-->
+                                    </span>
+                                </a>
+                                <!--<ul class="treeview-menu">
+                                    <li>
+                                        <a href="javascript:void(0)" onclick="Order.changeAdminOrderView('Pending')">
+                                            <i class="fa fa-circle-o"></i> Pending
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" onclick="Order.changeAdminOrderView('Processing')">
+                                            <i class="fa fa-circle-o"></i> Processing
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" onclick="Order.changeAdminOrderView('Completed')">
+                                            <i class="fa fa-circle-o"></i> Completed
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" onclick="Order.changeAdminOrderView('Canceled')">
+                                            <i class="fa fa-circle-o"></i> Canceled
+                                        </a>
+                                    </li>
+                                </ul>-->
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)" onclick="order.changeAdminReportView()">
+                                    <i class="fa fa-circle-o"></i> Report
+                                    <span class="pull-right-container">
+                                        <!--<i class="fa fa-angle-left pull-right"></i>-->
+                                    </span>
+                                </a>
+                                <!--<ul class="treeview-menu">
+                                    <li>
+                                        <a href="javascript:void(0)" onclick="Order.changeAdminReportView('report-by-dept')">
+                                            <i class="fa fa-circle-o"></i> By Department
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" onclick="Order.changeAdminReportView('report-by-type')">
+                                            <i class="fa fa-circle-o"></i> By Type
+                                        </a>
+                                    </li>
+                                </ul>-->
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #/admin -->
+                </ul>
+            </section>
+            <!-- ./sidebar -->
+        </aside>
+        <!-- ./main-sidebar -->
+
+        <div id="contentWrapper" class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- 2 Columns Horizontal Form -->
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                Business Card Request
+                                <!-- <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li>
+                                            <a href="#">Config option 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div> -->
+                            </div>
+                            <div class="ibox-content">
+                                <!-- BEGIN FORM-->
+                                <form action="#" class="form-horizontal">
+                                    <div class="form-body">
+                                        <h3 class="form-section">Person Info</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label" for="nameCN">
+                                                        中文姓名
+                                                        <br />Name in Chinese
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" id="nameCN" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label" for="nameEN">
+                                                        英文姓名
+                                                        <br />Name in English
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" id="nameEN" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!--/row-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label" for="titleCN">
+                                                        中文职位
+                                                        <br />Title in Chinese
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" id="titleCN" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label" for="titleEN">
+                                                        英文职位
+                                                        <br />Title in English
+                                                    </label>
+                                                    <div class="col-md-9 field-control">
+                                                        <input type="text" class="form-control" id="titleEN" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/row-->
+
+                                        <h3 class="form-section">Contact</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="directLine">直线
+                                                        <br />Direct Line</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" id="directLine" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label" for="emailAddress">
+                                                        邮箱地址
+                                                        <br />Email Address
+                                                    </label>
+                                                    <div class="col-md-9 input-group">
+                                                        <input type="text" class="form-control" id="emailAddress" aria-describedby="basic-addon2">
+                                                        <span class="input-group-addon" id="basic-addon2">@rogerscorp.com</span>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                        </div>
+                                        <!--/row-->
+
+                                        <h3 class="form-section">Address</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label" for="deptCN">
+                                                        中文部门
+                                                        <br />BU/Function in Chinese
+                                                    </label>
+                                                    <div class="col-md-9 field-control">
+                                                        <select class="form-control" id="deptCN">
+                                                            <option>信息技术部</option>
+                                                            <option>财务部</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label" for="deptEN">
+                                                        英文部门
+                                                        <br />BU/Function in English
+                                                    </label>
+                                                    <div class="col-md-9 field-control">
+                                                        <select class="form-control" id="deptEN">
+                                                            <option>IT</option>
+                                                            <option>Finance</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/row-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label" for="companyAddress">
+                                                        公司地址
+                                                        <br />Company Address
+                                                    </label>
+                                                    <div class="col-md-9 field-control">
+                                                        <div class="address">
+                                                            苏州市工业园区
+                                                            <select class="address-control" id="companyAddressCN">
+                                                                <option value="8">8</option>
+                                                                <option value="88">88</option>
+                                                            </select>号
+                                                            <br /> No.
+                                                            <select class="address-control" id="companyAddressEN">
+                                                                <option value="8">8</option>
+                                                                <option value="88">88</option>
+                                                            </select> Suzhou Industrial Park, Suzhou
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label" for="remark">
+                                                        备注
+                                                        <br />Remark
+                                                    </label>
+                                                    <div class="col-md-9 field-control">
+                                                        <textarea rows="4" class="form-control " id="remark"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!--/row-->
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <div class="col-md-offset-3 col-md-9">
+                                                        <button type="submit" class="btn green">Submit</button>
+                                                        <button type="button" class="btn default">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6"> </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- END FORM-->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ./row -->
+            </section>
+            <!-- ./content -->
+        </div>
+        <!-- .#/contentWrapper -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- Vendor JavaScript -->
+    <script src="./js/vendor/jquery/jquery.min.js"></script>
+    <script src="./js/vendor/lodash/lodash.min.js"></script>
+    <script src="./js/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="./js/vendor/AdminLTE/AdminLTE.min.js"></script>
+    <script src="./js/vendor/bootstrap/bootstrap-editable.min.js"></script>
+    <script src="./js/vendor/bootstrap/bootstrap-table.min.js"></script>
+    <script src="./js/vendor/bootstrap/bootstrap-table-editable.min.js"></script>
+    <script src="./js/vendor/bootstrap/bootstrap-table-export.min.js"></script>
+    <script src="./js/vendor/tableExport/FileSaver.min.js"></script>
+    <script src="./js/vendor/tableExport/xlsx.core.min.js"></script>
+    <script src="./js/vendor/tableExport/tableExport.min.js"></script>
+    <script src="./js/vendor/sweetalert/sweetalert.min.js"></script>
+    <script src="./js/vendor/pace/pace.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="./js/vendor/vue/vue.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/module/util.js"></script>
+    <script src="./js/module/order.js"></script>
+</body>
+
+</html>
